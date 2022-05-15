@@ -18,7 +18,7 @@ public class User {
 			Class.forName("com.mysql.cj.jdbc.Driver");
 
 			// Provide the correct details: DBServer/DBName, username, password
-			con = DriverManager.getConnection("jdbc:mysql://localhost:3306/ceb_api", "root", "root");
+			con = DriverManager.getConnection("jdbc:mysql://localhost:3306/ceb_api", "root", "");
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
@@ -27,7 +27,7 @@ public class User {
 	
 	//insert
 
-	public String insertUser(String uid, String name, String nic, String address, String mobile, String email, String ebill, String created_at) { 
+	public String insertUser(String name, String nic, String address, String mobile, String email, String ebill, String created_at) { 
 	{   
 		String output = ""; 
 	 
@@ -46,7 +46,7 @@ public class User {
 			PreparedStatement preparedStmt = con.prepareStatement(query); 
 	 
 			// binding values    
-			preparedStmt.setString(1, uid);
+			preparedStmt.setInt(1, 0);
 			preparedStmt.setString(2, name);
 			preparedStmt.setString(3, nic);
 			preparedStmt.setString(4, address);

@@ -83,7 +83,7 @@ public class UserService extends HttpServlet {
 		
 		Map paras = getParasMap(request); 
 		 
-		 String output = innoObj.deleteUser(paras.get("pay_id").toString());  
+		 String output = innoObj.deleteUser(paras.get("uid").toString());  
 		 
 		 response.getWriter().write(output);
 	}
